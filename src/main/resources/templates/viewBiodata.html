@@ -10,6 +10,30 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <div>Biodata</div>
+        <hr>
+        Jumlah baris : <ll th:text="${record}"></ll>
+        <br>
+        <br>
+        <table border="1" style="border-collapse: collapse">
+            <tr>
+                <th>Action</th>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>No. HP</th>
+                <th>Status</th>
+            </tr>
+            <tr th:each="localbiodata:${biodata}">
+                <td>
+                    <a href="/index.html">Add</a>
+                    <a th:href="@{'/detil/'+${localbiodata.id}}">Detil</a>
+                    <a th:href="@{'/delete/'+${localbiodata.id}}">Delete</a>
+                </td>
+                <td th:text="${localbiodata.id}"></td>
+                <td th:text="${localbiodata.nama}"></td>
+                <td th:text="${localbiodata.nohp}"></td> 
+                <td th:text="${localbiodata.status}"></td>
+            </tr>
+        </table>
     </body>
 </html>

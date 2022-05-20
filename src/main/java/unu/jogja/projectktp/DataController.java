@@ -38,4 +38,9 @@ public class DataController {
         return "database";
     }
     
+    @RequestMapping("/edit")
+    public String doEdit(){
+        return "editktp";
+    }
+    
 }

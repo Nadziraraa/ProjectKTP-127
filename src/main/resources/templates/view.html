@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>View Table Using Thymeleaf</div>
+        <hr>
+        <div>CARI BARANG</div>
+        <table class="table table-striped" style="width:50%">
+            <tr th:each="daftarbarang,count:${daftar}">
+                <td th:text="${count.index+1}"></td>
+                <td th:text="${daftarbarang[0]}"></td>
+                <td th:text="${daftarbarang[1]}"></td>
+            </tr>
+        </table>
+        Barang :<p th:text="${barang}"></p>
+        Merk   :<p th:text="${merk}"></p>
+        Harga  :<p th:text="${harga}"></p>
+        Beli   <l th:text="${beli}"> Bayar  : <p th:text="${bayar}"></p> </l>
+        
+    </body>
+</html>
