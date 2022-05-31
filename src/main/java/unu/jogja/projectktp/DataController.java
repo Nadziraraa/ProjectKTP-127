@@ -30,10 +30,13 @@ public class DataController {
     @ResponseBody
     public String getDataKTP(Model model){
         int record = datactrl.getDataCount();
+        String result="";
         try {
-            newdata = datactrl.findDataEntities(0, record);}
-        catch (Exception e){}
+            newdata = datactrl.findDataEntities().subList(0, record);
+        }
+        catch (Exception e){result=e.getMessage();}
         model.addAttribute("goData", newdata);
+        model.addAttribute("record", record);
         
         return "database";
     }
